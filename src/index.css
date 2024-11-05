@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #0f172a;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: 
+    repeating-linear-gradient(
+        to right,
+        transparent 0 50px, 
+        #fff1 50px 51px
+    ),
+    repeating-linear-gradient(
+        to bottom,
+        transparent 0 50px, 
+        #fff1 50px 51px
+    );
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+form {
+    background-color: #eee;
+    width: max-content;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 24px;
+    display: flex;
+    gap: 10px;
+}
+
+form input,
+button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    cursor: pointer;
+}
+
+form input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+form input::-webkit-color-swatch {
+    border-radius: 50%;
+}
+
+#list {
+    display: flex;
+    flex-wrap: wrap; /* Allows notes to wrap on smaller screens */
+    gap: 10px; /* Add gap between notes */
+    justify-content: center; /* Center notes */
+    padding: 10px;
+    width: 100%; /* Full width */
+}
+
+#list textarea {
+    all: unset;
+    color: #d6d6d6;
+    width: 100%; /* Full width for textarea */
+    resize: none; /* Disable resizing */
+}
+
+#list .note {
+    background-color: #333;
+    width: 250px; /* Set a minimum width for notes */
+    min-height: 100px; /* Set a minimum height for notes */
+    border-top: 30px solid #e6b905;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px #0004;
+    padding: 10px;
+    position: relative; /* Change to relative for better positioning */
+}
+
+#list .note span {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    height: 30px;
+    font-family: cursive;
+    font-size: large;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: center; /* Center form elements */
+    }
+
+    form input,
+    button {
+        width: 50px; /* Wider inputs/buttons */
+        height: 50px;
+    }
+
+    #list .note {
+        width: 100px; /* Smaller notes on small screens */
+    }
+
+    #list textarea {
+        font-size: 14px; /* Adjust font size for textarea */
+    }
+}

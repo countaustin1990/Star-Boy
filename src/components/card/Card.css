@@ -1,0 +1,14 @@
+.note {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  cursor: grab;
+}
+
+.note:hover {
+    cursor: grab;
+}
+
+.note:active {
+  cursor: grabbing;
+}
